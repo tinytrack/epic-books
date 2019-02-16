@@ -19,8 +19,8 @@ ready(function(){
     for (i = 0; i < 10; i++) {
         const newCard = cardTemplate.content.cloneNode(true);
         newCard.querySelector('.card__inner').href = `index.html#${books[i].uri}`;
-        newCard.querySelector('.card__inner').src = `img/books/${books[i].uri}.jpg`;
-        newCard.querySelector('.card__inner').alt = `${books[i].name}`;
+        newCard.querySelector('.card__img').src = `img/books/${books[i].uri}.jpg`;
+        newCard.querySelector('.card__img').alt = `${books[i].name}`;
         newCard.querySelector('.card__title').textContent = `${books[i].name}`;
         newCard.querySelector('.card__price').textContent = `${books[i].price} ₽`;
         newCardFragment.appendChild(newCard);
