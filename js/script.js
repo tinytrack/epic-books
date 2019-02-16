@@ -3,26 +3,26 @@ ready(function(){
   // В этом месте должен быть написан ваш код
 
     let burgerBtn = document.querySelector('.burger');
-    let burgerWrapper = document.querySelector('.main-nav');
+    let mainNav = document.querySelector('#nav');
     burgerBtn.addEventListener('click', function () {
-        burgerWrapper.classList.toggle('main-nav--open');
+        mainNav.classList.toggle('main-nav--open');
     }); 
 
     let filterBtn = document.querySelector('#filters-trigger');
-    let filterWrapper = document.querySelector('.filters');
+    let filtersWrapper = document.querySelector('#filters');
     filterBtn.addEventListener('click', function () {
-        filterWrapper.classList.toggle('filters--open');
+        filtersWrapper.classList.toggle('filters--open');
     });
 
     const cardTemplate = document.querySelector('#card__item');
     const newCardFragment = document.createDocumentFragment();
     for (i = 0; i < 10; i++) {
         const newCard = cardTemplate.content.cloneNode(true);
-        newCard.firstElementChild.firstElementChild.href = `index.html#${books[i].uri}`;
-        newCard.firstElementChild.firstElementChild.children[0].src = `img/books/${books[i].uri}.jpg`;
-        newCard.firstElementChild.firstElementChild.children[0].alt = `${books[i].name}`;
-        newCard.firstElementChild.firstElementChild.children[1].textContent = `${books[i].name}`;
-        newCard.firstElementChild.firstElementChild.children[3].textContent = `${books[i].price} ₽`;
+        newCard.querySelector('.card__inner').href = `index.html#${books[i].uri}`;
+        newCard.querySelector('.card__inner').src = `img/books/${books[i].uri}.jpg`;
+        newCard.querySelector('.card__inner').alt = `${books[i].name}`;
+        newCard.querySelector('.card__title').textContent = `${books[i].name}`;
+        newCard.querySelector('.card__price').textContent = `${books[i].price} ₽`;
         newCardFragment.appendChild(newCard);
     }
 
