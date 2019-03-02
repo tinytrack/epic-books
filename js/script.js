@@ -33,17 +33,20 @@ ready(function(){
     initPopup = (function () {
         let isPopupShown = false;
         let htmlTag = document.querySelector('.page');
-        let popupContainer;
-        let cardItem = document.querySelectorAll('.card__inner');
+        let popupContainer = document.querySelector('#modal-book-view');
         let hidePopupBtn = document.querySelector('.modal__close');
-        let buyBtn = document.querySelector('.card__buy')
+        let catalogInner = document.querySelector('.catalog__inner')
 
-        popupContainer = document.querySelector('#modal-book-view');
-        cardItem.forEach(function (item) {
-            item.addEventListener('click', function (e) {
-                renderContent(item);
-                showPopup(popupContainer)
-            })
+        catalogInner.addEventListener('click', function (event) {
+            let target = event.target;
+            while (target !== this) {
+                if (target.tagName == 'A') {
+                    renderContent(target.href);
+                    showPopup(popupContainer)
+                    return;
+                }
+                target = (target.parentNode);
+            }
         });
 
         popupContainer.addEventListener('click', function (e) {
@@ -76,8 +79,8 @@ ready(function(){
         const popupTemplate = document.querySelector('#popup-template');
         const newPopupFragment = document.createDocumentFragment();
 
-        function renderContent(itemOfArr) {
-            let popupUrl = itemOfArr.href.split('#')[1];
+        function renderContent(itemLink) {
+            let popupUrl = itemLink.split('#')[1];
 
             function findInArr(array, value) {
                 for (let i = 0; i < array.length; i++) {
