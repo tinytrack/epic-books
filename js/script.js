@@ -40,7 +40,7 @@ ready(function(){
         catalogInner.addEventListener('click', function (event) {
             let target = event.target;
             while (target !== this) {
-                if (target.tagName == 'A') {
+                if (target.className == 'card__inner') {
                     renderContent(target.href);
                     showPopup(popupContainer)
                     return;
