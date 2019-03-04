@@ -28,7 +28,93 @@ ready(function(){
 
     document.querySelector('.catalog__books-list').appendChild(newCardFragment);
 
+    ///
 
+    initPopup = (function () {
+        let isPopupShown = false;
+        let htmlTag = document.querySelector('.page');
+        let popupContainer = document.querySelector('#modal-book-view');
+        let hidePopupBtn = document.querySelector('.modal__close');
+        let catalogInner = document.querySelector('.catalog__inner')
+
+        catalogInner.addEventListener('click', function (event) {
+            let target = event.target;
+            while (target !== this) {
+                if (target.className == 'card__inner') {
+                    renderContent(target.href);
+                    showPopup(popupContainer)
+                    return;
+                }
+                target = (target.parentNode);
+            }
+        });
+
+        popupContainer.addEventListener('click', function (e) {
+            if (e.target !== popupContainer) {
+                return;
+            }
+
+            hidePopup(popupContainer);
+        });
+
+        hidePopupBtn.addEventListener('click', function () {
+            hidePopup(popupContainer);
+        });
+
+        function showPopup(elem) {
+            if (isPopupShown !== true) {
+                elem.classList.add('modal--open');
+                htmlTag.classList.add('js-modal-open');
+                popupShown = true;
+            }
+        }
+
+        function hidePopup(e) {
+            e.className = e.className.replace('modal--open', '');
+            htmlTag.classList.remove('js-modal-open');
+            popupShown = false;
+            document.querySelector('.product').remove();
+        }
+
+        const popupTemplate = document.querySelector('#popup-template');
+        const newPopupFragment = document.createDocumentFragment();
+
+        function renderContent(itemLink) {
+            let popupUrl = itemLink.split('#')[1];
+
+            function findInArr(array, value) {
+                for (let i = 0; i < array.length; i++) {
+                    if (array[i].uri === value) {
+                        return i;
+                    }
+                }
+                return 'не найдено';
+            }
+
+            let indexOfCard = findInArr(books, popupUrl);
+
+            function getFromArr(arr,i) {
+                const newPopup = popupTemplate.content.cloneNode(true);
+                newPopup.querySelector('.product__title').textContent = `${arr[i].name}`;
+                newPopup.querySelector('.product__img').src = `img/books/${arr[i].uri}.jpg`;
+                newPopup.querySelector('.product__img').alt = `${arr[i].name}`;
+                newPopup.querySelector('.product__descr').getElementsByTagName('p')[0].textContent = `${arr[i].desc}`;
+                newPopup.querySelector('.btn--price').innerHTML =
+                    `${arr[i].price} ₽
+                    <span class="btn__sm-text">
+                    <svg class="btn__icon" width="14" height="14">
+                    <use xlink:href="#plus"></use>
+                    </svg>
+                    <span>В корзину</span>
+                    </span>`;
+                newPopupFragment.appendChild(newPopup);
+            }
+
+            getFromArr(books, indexOfCard)
+
+            document.querySelector('.modal__content').appendChild(newPopupFragment);
+        }
+    }());
 
   // ВНИМАНИЕ!
   // Нижеследующий код (кастомный селект и выбор диапазона цены) работает
