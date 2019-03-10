@@ -109,31 +109,31 @@
                     </div>
                     <ul class="tabs page-header__book-tabs">
                         <li class="tabs__item">
-                            <a class="tabs__item-link" href="index.html">Научпоп</a>
-                        </li>
-                        <li class="tabs__item tabs__item--active">
-                            <a class="tabs__item-link" href="index.html">Маркетинг</a>
+                            <a class="tabs__item-link" data-type="science" href="index.html">Научпоп</a>
                         </li>
                         <li class="tabs__item">
-                            <a class="tabs__item-link" href="index.html">Бизнес</a>
+                            <a class="tabs__item-link" data-type="marketing" href="index.html">Маркетинг</a>
                         </li>
                         <li class="tabs__item">
-                            <a class="tabs__item-link" href="index.html">Проектирование</a>
+                            <a class="tabs__item-link" data-type="business" href="index.html">Бизнес</a>
                         </li>
                         <li class="tabs__item">
-                            <a class="tabs__item-link" href="index.html">Дизайн</a>
+                            <a class="tabs__item-link" data-type="engineering" href="index.html">Проектирование</a>
                         </li>
                         <li class="tabs__item">
-                            <a class="tabs__item-link" href="index.html">Программирование</a>
+                            <a class="tabs__item-link" data-type="design" href="index.html">Дизайн</a>
                         </li>
                         <li class="tabs__item">
-                            <a class="tabs__item-link" href="index.html">Психология</a>
+                            <a class="tabs__item-link" data-type="programming" href="index.html">Программирование</a>
+                        </li>
+                        <li class="tabs__item">
+                            <a class="tabs__item-link" data-type="psychology" href="index.html">Психология</a>
                         </li>
                     </ul>
                 </div>
             </header>
             <section class="catalog">
-                <div class="catalog__filters filters" id="filters">
+                <div class="catalog__filters filters filters--open" id="filters">
                     <!-- Дописать на элемент .filters класс .filters--open для показа полного фильтра-->
                     <form class="filters__inner" id="filters-form">
                         <div class="filters__view-line">
@@ -176,19 +176,19 @@
                                 <label class="field-text  field-text--sm">
                                     <span class="field-text__name">Автор:</span>
                                     <span class="field-text__input-wrap">
-                                        <input class="field-text__input" type="text" value="Виктор Пелевин" name="author" placeholder="Введите автора" />
+                                        <input class="field-text__input" data-bind="filter-element" type="text" name="author" placeholder="Введите автора" />
                                     </span>
                                 </label>
                                 <label class="field-text  field-text--sm">
                                     <span class="field-text__name">Название книги:</span>
                                     <span class="field-text__input-wrap">
-                                        <input class="field-text__input" type="text" name="book-name" placeholder="Название книги / серии" />
+                                        <input class="field-text__input" data-bind="filter-element" type="text" name="book-name" placeholder="Название книги / серии" />
                                     </span>
                                 </label>
                                 <label class="field-text  field-text--sm">
                                     <span class="field-text__name">Издательство:</span>
                                     <span class="field-text__input-wrap">
-                                        <input class="field-text__input" type="text" value="МИФ" name="publisher" placeholder="" disabled="disabled" />
+                                        <input class="field-text__input" data-bind="filter-element" type="text" name="publisher" placeholder="Название издательства" />
                                     </span>
                                 </label>
                             </div>
@@ -198,7 +198,7 @@
                                     <div class="field-select-group__wrap">
                                         <div class="field-select  field-select--sm">
                                             <div class="field-select__select-wrap">
-                                                <select class="field-select__select" name="year-from">
+                                                <select class="field-select__select" data-bind="filter-element" name="year-from">
                                                     <option value="2010">От 2010</option>
                                                     <option value="2011">От 2011</option>
                                                     <option value="2012">От 2012</option>
@@ -213,7 +213,7 @@
                                         </div>
                                         <div class="field-select  field-select--sm">
                                             <div class="field-select__select-wrap">
-                                                <select class="field-select__select" name="year-to">
+                                                <select class="field-select__select" data-bind="filter-element" name="year-to">
                                                     <option value="2019">До 2019</option>
                                                     <option value="2018">До 2018</option>
                                                     <option value="2017">До 2017</option>
@@ -233,7 +233,7 @@
                                     <div class="field-select  field-select--sm">
                                         <div class="field-select__name">Переплёт:</div>
                                         <div class="field-select__select-wrap">
-                                            <select class="field-select__select" name="binding">
+                                            <select class="field-select__select" data-bind="filter-element" name="binding">
                                                 <option value="val06">Твёрдый</option>
                                                 <option value="val05">Мягкий</option>
                                             </select>
@@ -242,7 +242,7 @@
                                     <div class="field-select  field-select--sm field-select--lang" id="lang">
                                         <div class="field-select__name">Язык:</div>
                                         <div class="field-select__select-wrap">
-                                            <select class="field-select__select" name="language">
+                                            <select class="field-select__select" data-bind="filter-element" name="language">
                                                 <option value="ru">Русский</option>
                                                 <option value="en">Английский</option>
                                             </select>
@@ -254,9 +254,9 @@
                                     <div class="field-price__range-wrap">
                                         <div class="field-price__range" id="price-range"></div>
                                         <div class="field-price__inputs-wrap">
-                                            ₽ <input class="field-price__input" id="price-from" type="text" value="50" disabled>
+                                            ₽ <input class="field-price__input" data-bind="filter-element" id="price-from" type="text" value="50" >
                                             <span class="field-price__dash">—</span>
-                                            <input class="field-price__input" id="price-to" type="text" value="1000" disabled>
+                                            <input class="field-price__input" data-bind="filter-element" id="price-to" type="text" value="1000" >
                                         </div>
                                     </div>
                                 </div>
