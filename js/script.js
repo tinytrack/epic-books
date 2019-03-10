@@ -215,21 +215,25 @@ ready(function () {
     };
 
     initHeaderFilter = (function () {
-        headerFilterItems = document.querySelectorAll('.tabs__item-link');
-        for (i = 0; i < headerFilterItems.length; i++) {
-            headerFilterItems[i].addEventListener('click', function (event) {
+        headerFilterItems = document.querySelectorAll('.tabs__item');
+        headerFilterItems.forEach(function (item) {
+            item.addEventListener('click', function (event) {
+                event.preventDefault();
+                activeElem = document.querySelector('.tabs__item--active');
+                activeElem.classList.remove('tabs__item--active')
                 document.querySelector('#filters-form').reset();
                 let headerFilterArr = [];
-                event.preventDefault();
+                let target = event.target;
                 books.forEach(function (book) {
-                    if (book.type !== event.target.dataset.type) {
+                    if (book.type !== target.dataset.type) {
                         return;
                     }
+                    target.parentNode.classList.add('tabs__item--active')
                     headerFilterArr.push(book);
                 });
                 renderCards(headerFilterArr)
             });
-        }
+        });
     }());
 
 
