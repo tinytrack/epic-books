@@ -4,531 +4,910 @@ const books = [
     "desc":"",
     "price":697,
     "uri":"klienty-na-vsyu-zhizn",
-    "type":"marketing"
+    "type":"marketing",
+    "author":"Карл Сьюэлл, Пол Браун",
+    "publishing":"МИФ",
+    "cover":'val06',
+    "lang":"ru",
+    "year":1996
   },
   {
     "name":"Ценные решения",
     "desc":"Как работать с ценами, чтобы прибыль росла",
     "price":637,
     "uri":"tsennye-resheniya",
-    "type":"marketing"
+    "type":"marketing",
+    "author":"Роман Тарасенко",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2010
   },
   {
     "name":"45 татуировок продавана",
     "desc":"Правила для тех, кто продаёт и управляет продажами",
     "price":676,
     "uri":"45-tatuirovok-prodavana",
-    "type":"business"
+    "type":"engineering",
+    "author":"Максим Батырев",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"en",
+    "year":2001
   },
   {
     "name":"Дневник художника-натуралиста",
     "desc":"Как рисовать животных, птиц, растения и пейзажи",
     "price":1695,
     "uri":"dnevnik-khudozhnika-naturalista",
-    "type":"creativity"
+    "type":"design",
+    "author":"Джон Лоуз",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"en"
   },
   {
     "name":"Открытое мышление",
     "desc":"Как выйти за пределы своей точки зрения",
     "price":625,
     "uri":"otkrytoe-myshlenie",
-    "type":"business"
+    "type":"engineering",
+    "author":"Институт Арбингера",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"en",
+    "year":2007
   },
   {
     "name":"Не делай это",
     "desc":"Тайм-менеджмент для творческих людей",
     "price":855,
     "uri":"ne-delay-eto",
-    "type":"creativity"
+    "type":"design",
+    "author":"Дональд Рос",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"en",
+    "year":2016
   },
   {
     "name":"Я хочу больше идей!",
     "desc":"Более 100 техник и упражнений для развития творческого мышления",
     "price":667,
     "uri":"ya-khochu-bolshe-idey",
-    "type":"creativity"
+    "type":"design",
+    "author":"Стив Роулинг",
+    "publishing":"МИФ",
+    "cover":'val06',
+    "lang":"en",
+    "year":2018
   },
   {
     "name":"Urban Jungle",
     "desc":"Как создать уютный интерьер с помощью растений",
     "price":807,
     "uri":"urban-jungle",
-    "type":"creativity"
+    "type":"design",
+    "author":"Игорь Йосифович, Джудит Де Граф",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"en",
+    "year":2019
   },
   {
     "name":"На крючке",
     "desc":"Как создавать продукты, формирующие привычки",
     "price":595,
     "uri":"na-kryuchke",
-    "type":"marketing"
+    "type":"marketing",
+    "author":"Нир Эяль, Райан Хувер",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2000
   },
   {
     "name":"Вместе быстрее",
     "desc":"12 принципов командной эффективности",
     "price":1025,
     "uri":"vmeste-bystree",
-    "type":"business"
+    "type":"engineering",
+    "author":"Лора Стэк",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"en",
+    "year":2015
   },
   {
     "name":"Искренний сервис",
     "desc":"Как мотивировать сотрудников сделать для клиента больше, чем достаточно. Даже когда шеф не смотрит",
     "price":637,
     "uri":"iskrenniy-servis",
-    "type":"marketing"
+    "type":"programming",
+    "author":"Максим Недякин",
+    "publishing":"МИФ",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2015
   },
   {
     "name":"Охотник за идеями",
     "desc":"Как найти дело жизни и сделать мир лучше",
     "price":671,
     "uri":"okhotnik-za-ideyami",
-    "type":"business"
+    "type":"engineering",
+    "author":"Семён Кибало",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2017
   },
   {
     "name":"Психология",
     "desc":"Люди, концепции, эксперименты",
     "price":688,
     "uri":"psikhologiya",
-    "type":"science"
+    "type":"science",
+    "author":"Пол Клейнман",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"en",
+    "year":2014
   },
   {
     "name":"Трамп и эпоха постправды",
     "desc":"",
     "price":722,
     "uri":"tramp-i-epokha-postpravdy",
-    "type":"science"
+    "type":"science",
+    "author":"Кен Уилбер",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2018
   },
   {
     "name":"Бизнес как игра",
     "desc":"Грабли российского бизнеса и неожиданные решения",
     "price":697,
     "uri":"biznes-kak-igra",
-    "type":"business"
+    "type":"business",
+    "author":"Сергей Абдульманов, Дмитрий Кибкало и Дмитрий Борисов",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2016
   },
   {
     "name":"Удовольствие от x",
     "desc":"Увлекательная экскурсия в мир математики от одного из лучших преподавателей в мире",
     "price":805,
     "uri":"udovolstvie-ot-x",
-    "type":"science"
+    "type":"science",
+    "author":"Стивен Строгац",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"en",
+    "year":2013
   },
   {
     "name":"Аналитическая культура",
     "desc":"От сбора данных до бизнес-результатов",
     "price":1084,
     "uri":"analiticheskaya-kultura",
-    "type":"business"
+    "type":"business",
+    "author":"Карл Андерсон",
+    "publishing":"МИФ",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2011
   },
   {
     "name":"Маркетинг от потребителя",
     "desc":"",
     "price":1215,
-    "uri":"marketing-ot-potrebitelya",
-    "type":"marketing"
+    "uri":"programming-ot-potrebitelya",
+    "type":"programming",
+    "author":"Роджер Бест",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2012
   },
   {
     "name":"Стратегия e-mail-маркетинга",
     "desc":"Эффективные рассылки для вашего бизнеса",
     "price":722,
-    "uri":"strategiya-e-mail-marketinga",
-    "type":"marketing"
+    "uri":"strategiya-e-mail-programminga",
+    "type":"programming",
+    "author":"Виталий Александров",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2010
   },
   {
     "name":"Огилви о рекламе",
     "desc":"",
     "price":1296,
     "uri":"ogilvi-o-reklame",
-    "type":"marketing"
+    "type":"programming",
+    "author":"Роберт Огилви",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"en",
+    "year":2011
   },
   {
     "name":"Обновить страницу",
     "desc":"О трансформации Microsoft и технологиях будущего от первого лица",
     "price":820,
     "uri":"obnovit-stranitsu",
-    "type":"business"
+    "type":"business",
+    "author":"Сатья Наделла",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2015
   },
   {
     "name":"Путеводитель по лжи",
     "desc":"Критическое мышление в эпоху постправды",
     "price":761,
     "uri":"putevoditel-po-lzhi",
-    "type":"science"
+    "type":"science",
+    "author":"Дэниел Левитин",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2014
   },
   {
     "name":"Рисовый штурм и еще 21 способ мыслить нестандартно",
     "desc":"",
     "price":829,
     "uri":"risovyy-shturm-i-esche-21-sposob-myslit-nestandartno",
-    "type":"creativity"
+    "type":"design",
+    "author":"Майкл Микалко",
+    "publishing":"МИФ",
+    "cover":'val06',
+    "lang":"en",
+    "year":2016
   },
   {
     "name":"Сделано, чтобы прилипать",
     "desc":"Почему одни идеи выживают, а другие умирают",
     "price":714,
     "uri":"sdelano-chtoby-prilipat",
-    "type":"creativity"
+    "type":"design",
+    "author":"Чип Хиз, Дэн Хиз",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"en",
+    "year":2019
   },
   {
     "name":"Гибкий ум",
     "desc":"Как видеть вещи иначе и думать нестандартно",
     "price":805,
     "uri":"gibkiy-um",
-    "type":"creativity"
+    "type":"design",
+    "author":"Эстанислао Бахрах",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2018
   },
   {
     "name":"Заразительный",
     "desc":"Психология сарафанного радио. Как продукты и идеи становятся популярными",
     "price":701,
     "uri":"zarazitelnyy",
-    "type":"marketing"
+    "type":"programming",
+    "author":"Йона Бергер",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2010
   },
   {
     "name":"Как привести дела в порядок",
     "desc":"Искусство продуктивности без стресса",
     "price":767,
     "uri":"kak-privesti-dela-v-poryadok",
-    "type":"business"
+    "type":"business",
+    "author":"Дэвид Аллен",
+    "publishing":"МИФ",
+    "cover":'val06',
+    "lang":"en",
+    "year":2011
   },
   {
     "name":"Создавая бестселлер",
     "desc":"Шаг за шагом к захватывающему сюжету, сильной сцене и цельной композиции",
     "price":625,
     "uri":"sozdavaya-bestseller",
-    "type":"creativity"
+    "type":"design",
+    "author":"Марта Олдерсон",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2012
   },
   {
     "name":"Маркетинг в социальных сетях",
     "desc":"",
     "price":735,
-    "uri":"marketing-v-sotsialnykh-setyakh",
-    "type":"marketing"
+    "uri":"programming-v-sotsialnykh-setyakh",
+    "type":"programming",
+    "author":"Дамир Халилов",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2013
   },
   {
     "name":"Nudge",
     "desc":"Архитектура выбора",
     "price":865,
     "uri":"nudge",
-    "type":"science"
+    "type":"science",
+    "author":"Ричард Талер, Касс Санстейн",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2014
   },
   {
     "name":"iМаркетинг",
     "desc":"Работаем по системе",
     "price":697,
-    "uri":"imarketing",
-    "type":"marketing"
+    "uri":"iprogramming",
+    "type":"programming",
+    "author":"Виталий Мышляев",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"en",
+    "year":2015
   },
   {
     "name":"Ген директора",
     "desc":"17 правил позитивного менеджмента по-русски",
     "price":731,
     "uri":"gen-direktora",
-    "type":"business"
+    "type":"business",
+    "author":"Владимир Моженков",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"en",
+    "year":2012
   },
   {
     "name":"Психология убеждения",
     "desc":"50 доказанных способов быть убедительным",
     "price":805,
     "uri":"psikhologiya-ubezhdeniya",
-    "type":"marketing"
+    "type":"programming",
+    "author":"Ноа Гольдштейн, Стив Мартин, Роберт Чалдини",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"en",
+    "year":2013
   },
   {
     "name":"Фиолетовая корова",
     "desc":"Сделайте свой бизнес выдающимся",
     "price":676,
     "uri":"fioletovaya-korova",
-    "type":"marketing"
+    "type":"marketing",
+    "author":"Сет Годин",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2010
   },
   {
     "name":"Цветовой квест. ГОРОДА",
     "desc":"30 непростых картин по номерам",
     "price":635,
     "uri":"tsvetovoy-kvest-goroda",
-    "type":"creativity"
+    "type":"psychology",
+    "author":"Джон Вудкок",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2018
   },
   {
     "name":"Акварельные пейзажи",
     "desc":"Основы, техники, эксперименты",
     "price":820,
     "uri":"akvarelnye-peyzazhi",
-    "type":"creativity"
+    "type":"psychology",
+    "author":"Терри Харрисон",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2019
   },
   {
     "name":"Дао физики",
     "desc":"Исследование параллелей между современной физикой и восточной философией",
     "price":608,
     "uri":"dao-fiziki",
-    "type":"science"
+    "type":"science",
+    "author":"Фритьоф Капра",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"en",
+    "year":2015
   },
   {
     "name":"Создайте личный бренд",
     "desc":"Как находить возможности, развиваться и выделяться",
     "price":552,
     "uri":"sozdayte-lichnyy-brend",
-    "type":"creativity"
+    "type":"psychology",
+    "author":"Юрген Саленбахер",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"en",
+    "year":2011
   },
   {
     "name":"Сдвиг",
     "desc":"Как выжить в стремительном будущем",
     "price":850,
     "uri":"sdvig",
-    "type":"science"
+    "type":"science",
+    "author":"Джой Ито, Джефф Хоуи",
+    "publishing":"МИФ",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2013
   },
   {
     "name":"Пятая дисциплина",
     "desc":"Искусство и практика обучающейся организации",
     "price":1207,
     "uri":"pyataya-distsiplina",
-    "type":"business"
+    "type":"business",
+    "author":"Питер Сенге",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2014
   },
   {
     "name":"Школа CEO",
     "desc":"Мастер-классы от 20 глобальных лидеров",
     "price":744,
     "uri":"shkola-ceo",
-    "type":"business"
+    "type":"business",
+    "author":"Станислав Шекшня, Кирилл Кравченко, Элин Уильямс",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2015
   },
   {
     "name":"Суперпотребители",
     "desc":"Кто это и почему они так важны для вашего бизнеса",
     "price":875,
     "uri":"superpotrebiteli",
-    "type":"marketing"
+    "type":"marketing",
+    "author":"Эдди Юн",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2011
   },
   {
     "name":"Как устроена экономика",
     "desc":"",
     "price":731,
     "uri":"kak-ustroena-ekonomika",
-    "type":"science"
+    "type":"science",
+    "author":"Ха-Джун Чанг",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"en",
+    "year":2012
   },
   {
     "name":"Дзен-камера",
     "desc":"Шесть уроков творческого развития и осознанности",
     "price":840,
     "uri":"dzen-kamera",
-    "type":"creativity"
+    "type":"psychology",
+    "author":"Дэвид Ульрих",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"en",
+    "year":2018
   },
   {
     "name":"Лидерство и самообман",
     "desc":"Жизнь, свободная от шор",
     "price":637,
     "uri":"liderstvo-i-samoobman",
-    "type":"business"
+    "type":"business",
+    "author":"Институт Арбингера",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2019
   },
   {
     "name":"Инструменты маркетинга для отдела продаж",
     "desc":"«Оружие» для менеджеров по продажам до встречи с клиентами, на встрече и после встречи с ними",
     "price":671,
     "uri":"instrumenty-marketinga-dlya-otdela-prodazh",
-    "type":"marketing"
+    "type":"marketing",
+    "author":"Игорь Манн, Анна Турусина, Екатерина Уколова",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2017
   },
   {
     "name":"Как делается кино",
     "desc":"",
     "price":616,
     "uri":"kak-delaetsya-kino",
-    "type":"creativity"
+    "type":"psychology",
+    "author":"Сидни Люмет",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2015
   },
   {
     "name":"Главное в истории искусств",
     "desc":"Ключевые работы, темы, направления, техники",
     "price":850,
     "uri":"glavnoe-v-istorii-iskusstv",
-    "type":"creativity"
+    "type":"psychology",
+    "author":"Сьюзи Ходж",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"en",
+    "year":2016
   },
   {
     "name":"Маркетинг без бюджета",
     "desc":"50 работающих инструментов",
     "price":1177,
     "uri":"marketing-bez-byudzheta",
-    "type":"marketing"
+    "type":"marketing",
+    "author":"Игорь Манн",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"en",
+    "year":2012
   },
   {
     "name":"Взлом маркетинга",
     "desc":"Наука о том, почему мы покупаем",
     "price":837,
     "uri":"vzlom-marketinga",
-    "type":"marketing"
+    "type":"marketing",
+    "author":"Фил Барден",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2011
   },
   {
     "name":"Смешать, но не взбалтывать",
     "desc":"Рецепты организации мероприятий",
     "price":795,
     "uri":"smeshat-no-ne-vzbaltyvat",
-    "type":"marketing"
+    "type":"marketing",
+    "author":"Александр Шумович, Сергей Берлов",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2010
   },
   {
     "name":"Стратегия голубого океана",
     "desc":"Как найти или создать рынок, свободный от других игроков",
     "price":973,
     "uri":"strategiya-golubogo-okeana",
-    "type":"business"
+    "type":"business",
+    "author":"В. Чан Ким, Рене Моборн",
+    "publishing":"МИФ",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2017
   },
   {
     "name":"Путешествия во времени",
     "desc":"",
     "price":870,
     "uri":"puteshestviya-vo-vremeni",
-    "type":"science"
+    "type":"science",
+    "author":"Джеймс Глик",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"en",
+    "year":2018
   },
   {
     "name":"Основы каллиграфии и леттеринга",
     "desc":"",
     "price":586,
     "uri":"osnovy-kalligrafii-i-letteringa",
-    "type":"creativity"
+    "type":"psychology",
+    "author":"Анна Рольская",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2019
   },
   {
     "name":"Быть начальником — это нормально",
     "desc":"Пошаговый план, который поможет вам стать тем менеджером, в котором нуждается ваша команда",
     "price":731,
     "uri":"byt-nachalnikom-eto-normalno",
-    "type":"business"
+    "type":"business",
+    "author":"Брюс Тулган",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2014
   },
   {
     "name":"Scrum",
     "desc":"Революционный метод управления проектами",
     "price":875,
     "uri":"scrum",
-    "type":"business"
+    "type":"business",
+    "author":"Джефф Сазерленд",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2012
   },
   {
     "name":"Голая экономика",
     "desc":"Разоблачение унылой науки",
     "price":744,
     "uri":"golaya-ekonomika",
-    "type":"science"
+    "type":"science",
+    "author":"Чарльз Уилан",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"en",
+    "year":2013
   },
   {
     "name":"Заразительный",
     "desc":"Психология сарафанного радио. Как продукты и идеи становятся популярными",
     "price":701,
     "uri":"zarazitelnyy",
-    "type":"marketing"
+    "type":"marketing",
+    "author":"Йона Бергер",
+    "publishing":"МИФ",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2010
   },
   {
     "name":"Как рождаются эмоции",
     "desc":"Революция в понимании мозга и управлении эмоциями",
     "price":1080,
     "uri":"kak-rozhdayutsya-emotsii",
-    "type":"science"
+    "type":"science",
+    "author":"Лиза Фельдман Барретт",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2011
   },
   {
     "name":"Теория игр",
     "desc":"Искусство стратегического мышления в бизнесе и жизни",
     "price":895,
     "uri":"teoriya-igr",
-    "type":"science"
+    "type":"science",
+    "author":"Авинаш Диксит, Барри Нейлбафф",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2019
   },
   {
     "name":"Одураченные случайностью",
     "desc":"О скрытой роли шанса в бизнесе и жизни",
     "price":885,
     "uri":"odurachennye-sluchaynostyu",
-    "type":"science"
+    "type":"science",
+    "author":"Нассим Талеб",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2018
   },
   {
     "name":"Кому нужна математика?",
     "desc":"Понятная книга о том, как устроен цифровой мир",
     "price":795,
     "uri":"komu-nuzhna-matematika",
-    "type":"science"
+    "type":"science",
+    "author":"Нелли Литвак, Андрей Райгородский",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"en",
+    "year":2015
   },
   {
     "name":"Злые самаритяне",
     "desc":"Миф о свободной торговле и секретная история капитализма",
     "price":895,
     "uri":"zlye-samarityane",
-    "type":"science"
+    "type":"science",
+    "author":"Ха-Джун Чанг",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2014
   },
   {
     "name":"Человек решающий",
     "desc":"Как построить организацию будущего, где решения принимает каждый",
     "price":646,
     "uri":"chelovek-reshayuschiy",
-    "type":"business"
+    "type":"business",
+    "author":"Деннис Бакке",
+    "publishing":"МИФ",
+    "cover":'val06',
+    "lang":"en",
+    "year":2011
   },
   {
     "name":"Как не ошибаться",
     "desc":"Сила математического мышления",
     "price":985,
     "uri":"kak-ne-oshibatsya",
-    "type":"science"
+    "type":"science",
+    "author":"Джордан Элленберг",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2016
   },
   {
     "name":"В эфире — сарафанное радио",
     "desc":"Практическое руководство по рекомендательному маркетингу",
     "price":637,
     "uri":"v-efire-sarafannoe-radio",
-    "type":"marketing"
+    "type":"marketing",
+    "author":"Кирилл Горский",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2009
   },
   {
     "name":"Маркетинг на 100%: ремикс",
     "desc":"Как стать хорошим менеджером по маркетингу",
     "price":676,
     "uri":"marketing-na-100-remiks",
-    "type":"marketing"
+    "type":"marketing",
+    "author":"Игорь Манн",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2014
   },
   {
     "name":"Неприятие перемен",
     "desc":"Как преодолеть сопротивление изменениям и раскрыть потенциал организации",
     "price":824,
     "uri":"nepriyatie-peremen",
-    "type":"business"
+    "type":"business",
+    "author":"Роберт Киган, Лиза Лэйхи",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"en",
+    "year":2017
   },
   {
     "name":"Атомы у нас дома",
     "desc":"Удивительная наука за повседневными вещами",
     "price":865,
     "uri":"atomy-u-nas-doma",
-    "type":"science"
+    "type":"science",
+    "author":"Крис Вудфорд",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2019
   },
   {
     "name":"И ботаники делают бизнес 1+2",
     "desc":"Удивительная история основателя «Додо Пиццы» Федора Овчинникова: от провала до миллиона",
     "price":718,
     "uri":"i-botaniki-delayut-biznes-1-2",
-    "type":"business"
+    "type":"engineering",
+    "author":"Максим Котин",
+    "publishing":"МИФ",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2019
   },
   {
     "name":"Работа в радость",
     "desc":"Бизнес-модель будущего",
     "price":773,
     "uri":"rabota-v-radost",
-    "type":"business"
+    "type":"engineering",
+    "author":"Деннис Бакке",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2012
   },
   {
     "name":"Неизбежно",
     "desc":"12 технологических трендов, которые определяют наше будущее",
     "price":975,
     "uri":"neizbezhno",
-    "type":"science"
+    "type":"science",
+    "author":"Кевин Келли",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"en",
+    "year":2013
   },
   {
     "name":"Симпсоны и их математические секреты",
     "desc":"",
     "price":646,
     "uri":"simpsony-i-ikh-matematicheskie-sekrety",
-    "type":"science"
+    "type":"science",
+    "author":"Саймон Сингх",
+    "publishing":"ЭКСМО",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2015
   },
   {
     "name":"Преломление",
     "desc":"Наука видеть иначе",
     "price":975,
     "uri":"prelomlenie",
-    "type":"science"
+    "type":"science",
+    "author":"Бо Лотто",
+    "publishing":"МИФ",
+    "cover":'val05',
+    "lang":"ru",
+    "year":2014
   },
   {
     "name":"Литературный мастер-класс",
     "desc":"Учитесь у Толстого, Чехова, Диккенса, Хемингуэя и многих других современных и классических авторов",
     "price":773,
     "uri":"literaturnyy-master-klass",
-    "type":"creativity"
+    "type":"psychology",
+    "author":"Юрген Вольф",
+    "publishing":"ЭКСМО",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2013
   },
   {
     "name":"Все начальники делают это",
     "desc":"Пошаговое руководство по решению (почти) всех проблем менеджера",
     "price":744,
     "uri":"vse-nachalniki-delayut-eto",
-    "type":"business"
+    "type":"engineering",
+    "author":"Брюс Тулган",
+    "publishing":"МИФ",
+    "cover":'val06',
+    "lang":"ru",
+    "year":2012
   }
 ];
