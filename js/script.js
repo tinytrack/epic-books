@@ -28,7 +28,6 @@ ready(function () {
 
     document.querySelector('.catalog__books-list').appendChild(newCardFragment);
 
-    ///
 
     initPopup = (function () {
         let isPopupShown = false;
@@ -117,7 +116,6 @@ ready(function () {
         }
     }());
 
-    ///
 
     initFilter = (function () {
         let searchBtn = document.querySelector('#books-show-btn');
@@ -140,24 +138,21 @@ ready(function () {
                     //проверка на имя
                     if (inputNameVal !== "") {
                         let re = new RegExp(inputNameVal, 'gi');
-                        let match = re.test(book.name);
-                        if (match == false) {
+                        if (re.test(book.name) == false) {
                             return;
                         };
                     }
                     //проверка на автора
                     if (inputAuthorVal !== "") {
                         let re = new RegExp(inputAuthorVal, 'gi');
-                        let match = re.test(book.author);
-                        if (match == false) {
+                        if (re.test(book.author) == false) {
                             return;
                         };
                     }
                     //проверка на издателя
                     if (inputPublishVal !== "") {
                         let re = new RegExp(inputPublishVal, 'gi');
-                        let match = re.test(book.publishing);
-                        if (match == false) {
+                        if (re.test(book.publishing) == false) {
                             return;
                         };
                     }
@@ -180,7 +175,6 @@ ready(function () {
                         }
                     }
                     searchResult.push(book);
-                    console.log(searchResult)
                 });
 
                 document.querySelector('#books-num').textContent = searchResult.length;
@@ -190,66 +184,56 @@ ready(function () {
                     document.querySelector('#books-show-btn').disabled = true;
                 }
             }
+            submitBtn(searchResult);
+        }
 
-            renderCards(searchResult)
+        function submitBtn(filteredArray) {
+            searchBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                renderCards(filteredArray)
+            });
         }
 
         formFilters.addEventListener('change', handle);
         formFilters.addEventListener('input', handle);
-
-        function renderCards(arr) {
-            searchBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                let myNode = document.querySelector(".catalog__books-list");
-                myNode.innerHTML = '';
-                for (i = 0; i < arr.length; i++) {
-                    const newCard = cardTemplate.content.cloneNode(true);
-                    newCard.querySelector('.card__inner').href = `index.html#${arr[i].uri}`;
-                    newCard.querySelector('.card__img').src = `img/books/${arr[i].uri}.jpg`;
-                    newCard.querySelector('.card__img').alt = `${arr[i].name}`;
-                    newCard.querySelector('.card__title').textContent = `${arr[i].name}`;
-                    newCard.querySelector('.card__price').textContent = `${arr[i].price} ₽`;
-                    newCardFragment.appendChild(newCard);
-                }
-
-                document.querySelector('.catalog__books-list').appendChild(newCardFragment);
-            });
-        }
     }());
 
-    ///
+    function renderCards(arr) {
+        let myNode = document.querySelector(".catalog__books-list");
+        myNode.innerHTML = '';
+        for (i = 0; i < arr.length; i++) {
+            const newCard = cardTemplate.content.cloneNode(true);
+            newCard.querySelector('.card__inner').href = `index.html#${arr[i].uri}`;
+            newCard.querySelector('.card__img').src = `img/books/${arr[i].uri}.jpg`;
+            newCard.querySelector('.card__img').alt = `${arr[i].name}`;
+            newCard.querySelector('.card__title').textContent = `${arr[i].name}`;
+            newCard.querySelector('.card__price').textContent = `${arr[i].price} ₽`;
+            newCardFragment.appendChild(newCard);
+        }
+
+        document.querySelector('.catalog__books-list').appendChild(newCardFragment);
+    };
 
     initHeaderFilter = (function () {
-        headerFilterItems = document.querySelectorAll('.tabs__item-link');
-        for (i = 0; i < headerFilterItems.length; i++) {
-            headerFilterItems[i].addEventListener('click', function (event) {
-                let headerFilterArr = [];
+        headerFilterItems = document.querySelectorAll('.tabs__item');
+        headerFilterItems.forEach(function (item) {
+            item.addEventListener('click', function (event) {
                 event.preventDefault();
+                activeElem = document.querySelector('.tabs__item--active');
+                activeElem.classList.remove('tabs__item--active')
+                document.querySelector('#filters-form').reset();
+                let headerFilterArr = [];
+                let target = event.target;
                 books.forEach(function (book) {
-                    if (book.type !== event.target.dataset.type) {
+                    if (book.type !== target.dataset.type) {
                         return;
                     }
+                    target.parentNode.classList.add('tabs__item--active')
                     headerFilterArr.push(book);
                 });
                 renderCards(headerFilterArr)
             });
-        }
-
-        function renderCards(arr) {
-            let myNode = document.querySelector(".catalog__books-list");
-            myNode.innerHTML = '';
-            for (i = 0; i < arr.length; i++) {
-                const newCard = cardTemplate.content.cloneNode(true);
-                newCard.querySelector('.card__inner').href = `index.html#${arr[i].uri}`;
-                newCard.querySelector('.card__img').src = `img/books/${arr[i].uri}.jpg`;
-                newCard.querySelector('.card__img').alt = `${arr[i].name}`;
-                newCard.querySelector('.card__title').textContent = `${arr[i].name}`;
-                newCard.querySelector('.card__price').textContent = `${arr[i].price} ₽`;
-                newCardFragment.appendChild(newCard);
-            }
-
-            document.querySelector('.catalog__books-list').appendChild(newCardFragment);
-        }
+        });
     }());
 
 
@@ -315,6 +299,7 @@ ready(function () {
             inputPriceFromVal.value = value;
         }
     });
+
     inputPriceFromVal.addEventListener('change', function () {
         slider.noUiSlider.set([this.value, null]);
     });

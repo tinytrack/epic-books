@@ -108,8 +108,8 @@
                         <span class="user-auth__name">Антон Павлов</span>
                     </div>
                     <ul class="tabs page-header__book-tabs">
-                        <li class="tabs__item">
-                            <a class="tabs__item-link" data-type="science" href="index.html">Научпоп</a>
+                        <li class="tabs__item tabs__item--active">
+                            <a class="tabs__item-link " data-type="science" href="index.html">Научпоп</a>
                         </li>
                         <li class="tabs__item">
                             <a class="tabs__item-link" data-type="marketing" href="index.html">Маркетинг</a>
@@ -133,7 +133,7 @@
                 </div>
             </header>
             <section class="catalog">
-                <div class="catalog__filters filters filters--open" id="filters">
+                <div class="catalog__filters filters" id="filters">
                     <!-- Дописать на элемент .filters класс .filters--open для показа полного фильтра-->
                     <form class="filters__inner" id="filters-form">
                         <div class="filters__view-line">
@@ -252,7 +252,7 @@
                                 <div class="field-price field-price--sm">
                                     <div class="field-price__name">Цена:</div>
                                     <div class="field-price__range-wrap">
-                                        <div class="field-price__range" id="price-range"></div>
+                                        <div class="field-price__range" data-bind="filter-element" id="price-range"></div>
                                         <div class="field-price__inputs-wrap">
                                             ₽ <input class="field-price__input" data-bind="filter-element" id="price-from" type="text" value="50" >
                                             <span class="field-price__dash">—</span>
