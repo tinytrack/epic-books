@@ -236,6 +236,58 @@ ready(function () {
         });
     }());
 
+    ///
+
+    initCartArr = (function () {
+        let catalogBuyBtns = document.querySelectorAll('.card__buy');
+        let cartArr = [];
+        for (i = 0; i < catalogBuyBtns.length; i++) {
+            catalogBuyBtns[i].addEventListener('click', function (event) {
+                let container = document.querySelector('.catalog__books-list');
+                let target = event.target;
+                while (target !== container) {
+                    if (target.classList.contains('card__buy') === true) {
+                        cartArrInit(target)
+                    }
+                    target = (target.parentNode);
+                }
+            });
+        }
+
+        function cartArrInit(idElem) {
+            let cardId = idElem.previousElementSibling.href.split('#')[1];
+            let cartItem = {
+                'id' : cardId,
+                'amount' : 1
+            };
+
+            if (cartArr.length !== 0) {
+                //cartArr.forEach(function (item) {
+                //    let itemId = item.id;
+                //    if (itemId === cardId) {
+                //        item.amount = item.amount + 1;
+                //        return;
+                //    } else {
+                //        cartArr.push(cartItem);
+                //    }
+                //});
+                for (let i = 0; i < cartArr.length; i++) {
+                    let itemId = cartArr[i].id;
+                    if (itemId === cardId) {
+                        cartArr[i].amount = cartArr[i].amount + 1;
+                        break;
+                    }
+                }
+                cartArr.push(cartItem);
+            } else {
+                cartArr.push(cartItem);
+            }
+
+            
+            console.log(cartArr)
+        }
+        
+    }());
 
     // ВНИМАНИЕ!
     // Нижеследующий код (кастомный селект и выбор диапазона цены) работает
