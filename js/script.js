@@ -261,30 +261,28 @@ ready(function () {
                 'amount' : 1
             };
 
-            if (cartArr.length !== 0) {
-                //cartArr.forEach(function (item) {
-                //    let itemId = item.id;
-                //    if (itemId === cardId) {
-                //        item.amount = item.amount + 1;
-                //        return;
-                //    } else {
-                //        cartArr.push(cartItem);
-                //    }
-                //});
-                for (let i = 0; i < cartArr.length; i++) {
-                    let itemId = cartArr[i].id;
-                    if (itemId === cardId) {
-                        cartArr[i].amount = cartArr[i].amount + 1;
-                        break;
-                    }
+            let idsArr = cartArr.map(function (item) {
+                return item.id;
+            });
+
+            if (idsArr.length !== 0) {
+                if (!idsArr.includes(cardId)) {
+                    cartArr.push(cartItem);
+                } else {
+                    let i = idsArr.indexOf(cardId)
+                    cartArr[i].amount += 1;
                 }
-                cartArr.push(cartItem);
             } else {
                 cartArr.push(cartItem);
             }
 
-            
-            console.log(cartArr)
+            let cartValue = 0;
+            cartArr.forEach(function (item) {
+                cartValue = cartValue + item.amount;
+            });
+            let cartArrStorage = JSON.stringify(cartArr);
+            localStorage.setItem("cart", cartArrStorage)
+            document.querySelector('.page-header__cart-num').textContent = cartValue;
         }
         
     }());
